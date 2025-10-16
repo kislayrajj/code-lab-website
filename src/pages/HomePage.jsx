@@ -79,7 +79,7 @@ function HomePage() {
 
                   <div className="flex gap-4">
                     <motion.a
-                      href="https://github.com"
+                      href="https://github.com/kislayrajj"
                       className="p-2 bg-secondary hover:bg-secondary/80 rounded-lg transition-colors"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
@@ -695,7 +695,7 @@ function HomePage() {
                 </p>
                 <div className="flex gap-4">
                   <motion.a
-                    href="https://github.com"
+                    href="https://github.com/kislayrajj"
                     className="p-3 bg-secondary hover:bg-secondary/80 rounded-xl transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}

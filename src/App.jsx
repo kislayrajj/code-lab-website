@@ -533,7 +533,7 @@ function App() {
                           <input
                             type="text"
                             placeholder="John"
-                            className="w-full px-4 py-3 border border-border/10 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors"
+                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors"
                           />
                         </div>
                         <div>
@@ -541,7 +541,7 @@ function App() {
                           <input
                             type="text"
                             placeholder="Doe"
-                            className="w-full px-4 py-3 border border-border/10 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors"
+                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors"
                           />
                         </div>
                       </div>
@@ -551,7 +551,7 @@ function App() {
                         <input
                           type="email"
                           placeholder="john@example.com"
-                          className="w-full px-4 py-3 border border-border/10 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors"
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors"
                         />
                       </div>
 
@@ -560,7 +560,7 @@ function App() {
                         <input
                           type="text"
                           placeholder="Your Company"
-                          className="w-full px-4 py-3 border border-border/10 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors"
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors"
                         />
                       </div>
 
@@ -569,7 +569,7 @@ function App() {
                         <input
                           type="text"
                           placeholder="Project Discussion"
-                          className="w-full px-4 py-3 border border-border/10 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors"
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors"
                         />
                       </div>
 
@@ -578,7 +578,7 @@ function App() {
                         <textarea
                           placeholder="Tell us about your project..."
                           rows="5"
-                          className="w-full px-4 py-3 border border-border/10 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors resize-none"
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors resize-none"
                         ></textarea>
                       </div>
 
@@ -611,7 +611,7 @@ function App() {
 
                     <div className="space-y-6">
                       <motion.div
-                        className="flex items-start gap-4 p-6 bg-secondary/50 rounded-2xl border border-border/10"
+                        className="flex items-start gap-4 p-6 bg-secondary/50 rounded-2xl border border-gray-200"
                         whileHover={{ scale: 1.02 }}
                       >
                         <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -625,7 +625,7 @@ function App() {
                       </motion.div>
 
                       <motion.div
-                        className="flex items-start gap-4 p-6 bg-secondary/50 rounded-2xl border border-border/10"
+                        className="flex items-start gap-4 p-6 bg-secondary/50 rounded-2xl border border-gray-200"
                         whileHover={{ scale: 1.02 }}
                       >
                         <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -639,7 +639,7 @@ function App() {
                       </motion.div>
 
                       <motion.div
-                        className="flex items-start gap-4 p-6 bg-secondary/50 rounded-2xl border border-border/10"
+                        className="flex items-start gap-4 p-6 bg-secondary/50 rounded-2xl border border-gray-200"
                         whileHover={{ scale: 1.02 }}
                       >
                         <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -655,7 +655,7 @@ function App() {
 
                     {/* Response Time Card */}
                     <motion.div
-                      className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl p-6 border border-border/10"
+                      className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl p-6 border border-gray-200"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
