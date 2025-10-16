@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Landing from './components/Landing';
 import { ThemeProvider } from './components/ThemeProvider';
@@ -8,6 +8,58 @@ import akush_dp from "./assets/images/ankush_ai_headshot.png"
 import kislay_dp from "./assets/images/dp_ai.png"
 
 function App() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "a0ea8dbb-8a9f-4e2f-9a9b-1092147d2ee2",
+          ...formData
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        alert("Message sent successfully!");
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          company: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      alert("An error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-background">
@@ -526,13 +578,17 @@ function App() {
                       Ready to bring your ideas to life? We'd love to hear about your project and discuss how we can help.
                     </p>
 
-                    <form className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-6">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                           <label className="block text-sm font-medium text-foreground mb-2">First Name</label>
                           <input
                             type="text"
+                            name="firstName"
+                            value={formData.firstName}
+                            onChange={handleChange}
                             placeholder="John"
+                            required
                             className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors"
                           />
                         </div>
@@ -540,7 +596,11 @@ function App() {
                           <label className="block text-sm font-medium text-foreground mb-2">Last Name</label>
                           <input
                             type="text"
+                            name="lastName"
+                            value={formData.lastName}
+                            onChange={handleChange}
                             placeholder="Doe"
+                            required
                             className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors"
                           />
                         </div>
@@ -550,7 +610,11 @@ function App() {
                         <label className="block text-sm font-medium text-foreground mb-2">Email</label>
                         <input
                           type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
                           placeholder="john@example.com"
+                          required
                           className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors"
                         />
                       </div>
@@ -559,6 +623,9 @@ function App() {
                         <label className="block text-sm font-medium text-foreground mb-2">Company (Optional)</label>
                         <input
                           type="text"
+                          name="company"
+                          value={formData.company}
+                          onChange={handleChange}
                           placeholder="Your Company"
                           className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors"
                         />
@@ -568,7 +635,11 @@ function App() {
                         <label className="block text-sm font-medium text-foreground mb-2">Subject</label>
                         <input
                           type="text"
+                          name="subject"
+                          value={formData.subject}
+                          onChange={handleChange}
                           placeholder="Project Discussion"
+                          required
                           className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors"
                         />
                       </div>
@@ -576,19 +647,24 @@ function App() {
                       <div>
                         <label className="block text-sm font-medium text-foreground mb-2">Message</label>
                         <textarea
+                          name="message"
+                          value={formData.message}
+                          onChange={handleChange}
                           placeholder="Tell us about your project..."
                           rows="5"
+                          required
                           className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-background transition-colors resize-none"
                         ></textarea>
                       </div>
 
                       <motion.button
                         type="submit"
-                        className="w-full px-8 py-4 bg-primary text-primary-foreground font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+                        disabled={isSubmitting}
+                        className="w-full px-8 py-4 bg-primary text-primary-foreground font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                         whileHover={{ scale: 1.02, y: -2 }}
                         whileTap={{ scale: 0.98 }}
                       >
-                        Send Message
+                        {isSubmitting ? "Sending..." : "Send Message"}
                         <Mail className="w-5 h-5" />
                       </motion.button>
                     </form>

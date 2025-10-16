@@ -86,7 +86,7 @@ const Landing = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Innovation Through <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Code</span>
+              Innovation Through <span className="bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent">Code</span>
             </motion.h1>
 
             <motion.p
