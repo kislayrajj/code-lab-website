@@ -1,13 +1,11 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Landing from './components/Landing';
-import { ThemeProvider } from './components/ThemeProvider';
+import Navbar from '../components/Navbar';
+import Landing from '../components/Landing';
+import { ThemeProvider } from '../components/ThemeProvider';
 import { Award, Coffee, Github, Mail, Code, Smartphone, Palette, Cloud, Zap, Shield, ExternalLink, Eye, Phone, MapPin, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
-import akush_dp from "./assets/images/ankush_ai_headshot.png"
-import kislay_dp from "./assets/images/dp_ai.png"
 
-function App() {
+function HomePage() {
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-background">
@@ -43,7 +41,7 @@ function App() {
                   <div className="flex flex-col sm:flex-row items-center gap-6 mb-6">
                     <div className="relative">
                       <img
-                        src={kislay_dp}
+                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
                         alt="Kislay Raj"
                         className="w-20 h-20 rounded-full object-cover border-4 border-primary/10"
                       />
@@ -111,14 +109,15 @@ function App() {
                   <div className="flex flex-col sm:flex-row items-center gap-6 mb-6">
                     <div className="relative">
                       <img
-                        src={akush_dp}
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+                        alt="Ankush Katoch"
                         className="w-20 h-20 rounded-full object-cover border-4 border-primary/10"
                       />
                       <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-background"></div>
                     </div>
                     <div className="text-center sm:text-left">
                       <h3 className="text-2xl font-bold text-foreground mb-1">Ankush Katoch</h3>
-                      <p className="text-primary font-medium">Frontend Developer & Co-Founder </p>
+                      <p className="text-primary font-medium">Design & Frontend Developer</p>
                     </div>
                   </div>
 
@@ -796,4 +795,4 @@ function App() {
   );
 }
 
-export default App;
+export default HomePage;

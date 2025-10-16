@@ -1,1 +1,82 @@
 @import "tailwindcss";
+
+/* Theme Variables */
+:root {
+  /* Light Theme */
+  --bg-primary: 255 255 255;
+  --bg-secondary: 248 250 252;
+  --bg-muted: 241 245 249;
+  --bg-accent: 59 130 246;
+
+  --text-foreground: 15 23 42;
+  --text-muted: 100 116 139;
+  --text-primary: 59 130 246;
+
+  --border: 226 232 240;
+  --border-muted: 203 213 225;
+
+  --shadow: 0 0 0 0.1;
+}
+
+[data-theme="dark"] {
+  --bg-primary: 15 23 42;
+  --bg-secondary: 30 41 59;
+  --bg-muted: 51 65 85;
+  --bg-accent: 59 130 246;
+
+  --text-foreground: 248 250 252;
+  --text-muted: 156 163 175;
+  --text-primary: 147 197 253;
+
+  --border: 51 65 85;
+  --border-muted: 71 85 105;
+
+  --shadow: 0 0 0 0.3;
+}
+
+[data-theme="blue"] {
+  --bg-primary: 239 246 255;
+  --bg-secondary: 219 234 254;
+  --bg-muted: 191 219 254;
+  --bg-accent: 37 99 235;
+
+  --text-foreground: 30 58 138;
+  --text-muted: 59 130 246;
+  --text-primary: 37 99 235;
+
+  --border: 191 219 254;
+  --border-muted: 147 197 253;
+
+  --shadow: 0 0 0 0.1;
+}
+
+[data-theme="green"] {
+  --bg-primary: 240 253 244;
+  --bg-secondary: 220 252 231;
+  --bg-muted: 187 247 208;
+  --bg-accent: 34 197 94;
+
+  --text-foreground: 21 128 61;
+  --text-muted: 34 197 94;
+  --text-primary: 34 197 94;
+
+  --border: 187 247 208;
+  --border-muted: 134 239 172;
+
+  --shadow: 0 0 0 0.1;
+}
+
+/* Custom utilities for theme colors */
+.bg-background { background-color: rgb(var(--bg-primary)); }
+.bg-secondary { background-color: rgb(var(--bg-secondary)); }
+.bg-muted { background-color: rgb(var(--bg-muted)); }
+.bg-accent { background-color: rgb(var(--bg-accent)); }
+
+.text-foreground { color: rgb(var(--text-foreground)); }
+.text-muted-foreground { color: rgb(var(--text-muted)); }
+.text-primary { color: rgb(var(--text-primary)); }
+
+.border-border { border-color: rgb(var(--border)); }
+.border-muted { border-color: rgb(var(--border-muted)); }
+
+.shadow-theme { box-shadow: var(--shadow); }
